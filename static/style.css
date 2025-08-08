@@ -1,0 +1,27 @@
+/*
+Custom styling to ensure iframes fill their container without fixed dimensions.
+This makes the layout more flexible and responsive.
+*/
+body {
+    background-image: url('miyama-building.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.iframe-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Removes the default iframe border */
+    border-radius: 0.5rem; /* Matches Tailwind's rounded-lg */
+}
+
+
