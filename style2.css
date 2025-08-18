@@ -1,0 +1,136 @@
+/*
+* Global Styles and Animations
+*/
+
+/* Define the background image */
+body {
+    background-image: url('Main Office.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: sans-serif;
+    color: #1a202c; /* Tailwind's default gray-900 */
+    position: relative;
+    overflow: hidden; /* Prevent scrolling issues with absolute positioning */
+}
+
+/* An overlay to slightly dim the background image for better readability */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Fade-in animation for the cards */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/*
+* Header and Card Styles
+*/
+
+/* Style for the top-left logo and text */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+    height: 2.5rem;
+    margin-right: 0.5rem;
+}
+
+/* Main container for the absolutely positioned cards */
+.card-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Base style for all cards */
+.card {
+    position: absolute; /* Use absolute positioning */
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 250px; /* Uniform width for all cards */
+    height: 250px; /* Uniform height for all cards */
+    opacity: 0; /* Initially hidden for staggered fade-in */
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the card content */
+.card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.card-image {
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+    width: 100%; /* Make image fill the card width */
+    height: 80%; /* Make image fill most of the card height */
+    object-fit: cover; /* Ensures the image covers the area uniformly without distortion */
+}
+
+.card-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/*
+* Specific positioning for each card
+*/
+
+.card-1 {
+    top: 25%;
+    left: 25%;
+    
+}
+
+.card-2 {
+    top: 25%;
+    left: 55%;
+
+}
+
+.card-3 {
+    top: 60%;
+    left: 25%;
+ 
+}
+
+.card-4 {
+    top: 60%;
+    left: 55%;
+
+}
