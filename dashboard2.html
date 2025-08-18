@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miyama Seikou Dashboard</title>
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="full-bg font-sans">
+    <!-- Header with logo and company name -->
+    <header class="header">
+        <img src="{{ url_for('static', filename='miyama-logo.png') }}" alt="Miyama Seikou Logo">
+        <span class="text-xl font-bold">ミヤマ精工株式会社</span>
+    </header>
+
+    <!-- Main content container for the cards -->
+    <div id="card-container" class="card-container">
+        <!-- Card for "第一工場" (1st Factory) -->
+        <a href="/daiichikoujou.html" class="card card-1">
+            <div class="card-inner">
+                <img src="{{ url_for('static', filename='Factory-1.png') }}" alt="First Factory" class="card-image">
+                <span class="card-text">第一工場</span>
+            </div>
+        </a>
+        <!-- Card for "第二工場" (2nd Factory) -->
+        <a href="/dainikoujou.html" class="card card-2">
+            <div class="card-inner">
+                <img src="{{ url_for('static', filename='Factory-2.png') }}" alt="Second Factory" class="card-image">
+                <span class="card-text">第二工場</span>
+            </div>
+        </a>
+        <!-- Card for "第三工場" (3rd Factory) -->
+        <a href="/daisankoujou.html" class="card card-3">
+            <div class="card-inner">
+                <img src="{{ url_for('static', filename='Factory-3.png') }}" alt="Third Factory" class="card-image">
+                <span class="card-text">第三工場</span>
+            </div>
+        </a>
+        <!-- Card for "豊田工場" (Toyota Factory) -->
+        <a href="/toyotakoujou.html" class="card card-4">
+            <div class="card-inner">
+                <img src="{{ url_for('static', filename='Toyota Factory.png') }}" alt="Toyota Factory" class="card-image">
+                <span class="card-text">豊田工場</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- JavaScript to handle the fade-in animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.animation = 'fadeIn 1s forwards';
+                }, 500 + (index * 200)); // Stagger the fade-in effect
+            });
+        });
+    </script>
+</body>
+</html>
