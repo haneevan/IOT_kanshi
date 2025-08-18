@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miyama Seikou Welcome</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /*
+        * CSS Animations for the intro effect
+        */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
+        /* Styling for the linear gradient background and centering content */
+        body {
+            background: linear-gradient(135deg, #4CAF50, #2196F3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0; /* Initially hidden */
+        }
+        
+        .logo-image {
+            width: 150px;
+            margin-bottom: 1rem;
+        }
+
+        .main-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .sub-text {
+            font-size: 1.25rem;
+            font-weight: normal;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- Replaced the placeholder logo with the company logo -->
+        <img src="{{ url_for('static', filename='upscaled no-bg.png') }}" alt="Miyama Seikou Co., Ltd. Logo" class="logo-image">
+        
+        <h1 class="main-text">ミヤマ精工株式会社 / Miyama Seikou Co., Ltd.</h1>
+        <p class="sub-text">IoTシステムへようこそ / Welcome to the IoT System</p>
+    </div>
+
+    <!-- JavaScript to handle the animation and redirect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const content = document.querySelector('.content');
+            
+            // First, fade in the content
+            setTimeout(() => {
+                content.style.animation = 'fadeIn 2s ease-in-out forwards';
+            }, 500);
+
+            // Then, fade out the content
+            setTimeout(() => {
+                content.style.animation = 'fadeOut 1s ease-in-out forwards';
+            }, 3000); // Wait 3 seconds, then start fading out
+
+            // Finally, redirect to the dashboard
+            setTimeout(() => {
+                window.location.href = '/dashboard';
+            }, 4000); // Redirect after 4 seconds total
+        });
+    </script>
+
+</body>
+</html>
