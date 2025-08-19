@@ -1,0 +1,224 @@
+/*
+* Global Styles and Animations
+*/
+body {
+    font-family: sans-serif;
+    color: #1a202c;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Opening page container styling */
+#opening-page {
+    background-image: url('Main Office.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: opacity 1s ease-in-out;
+}
+
+.opening-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: #054ab0;
+    opacity: 0; /* Initially hidden */
+}
+
+.logo-image {
+    width: 150px;
+    margin-bottom: 1rem;
+}
+
+.main-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.sub-text {
+    font-size: 1.25rem;
+    font-weight: normal;
+    margin-top: 0.5rem;
+}
+
+/* Dashboard page styling */
+#dashboard-page {
+    display: none; /* Initially hidden */
+    background-image: url('Main Office.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+/* An overlay to slightly dim the background image for better readability */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Fade-in animation for the dashboard cards */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Header and Card Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    /* This is the key fix to arrange the items horizontally and separate them */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo-container img {
+    height: 2.5rem;
+    margin-right: 0.5rem;
+}
+
+/* New styles for the navigation icons container */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Add some space between the icons */
+    margin-right: 1.5rem;
+}
+
+/* Updated styles for the navigation buttons */
+.nav-button {
+    /* Set a fixed size for the button itself */
+    width: 3.5rem; 
+    height: 3.5rem;
+    /* Remove default button styling */
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.nav-button:hover {
+    transform: scale(1.1); /* Optional: a slight scale effect on hover */
+}
+
+/* Style for the image inside the button */
+.nav-button img {
+    height: 2.5rem;
+    width: 2.5rem;
+    /* These properties ensure the image is scaled and centered correctly */
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Main container for the cards */
+.card-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Base style for all cards */
+.card {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 250px;
+    height: 250px;
+    opacity: 0;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the card content */
+.card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.card-image {
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.card-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Specific positioning for each card */
+.card-1 {
+    top: 25%;
+    left: 25%;
+}
+
+.card-2 {
+    top: 25%;
+    left: 55%;
+}
+
+.card-3 {
+    top: 60%;
+    left: 25%;
+}
+
+.card-4 {
+    top: 60%;
+    left: 55%;
+}
