@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miyama Seikou IOT Dashboard - 第二工場</title>
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to the now unified external stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        // This variable is correctly populated by the Flask backend
+        var start_dashboard = {{ start_dashboard | tojson }}
+    </script>
+</head>
+<body class="font-sans">
+
+    <!-- The opening page is now controlled by the unified script -->
+    <div id="opening-page" class="opening-page-container">
+        <div class="opening-page-content">
+            <img src="{{ url_for('static', filename='upscaled no-bg.png') }}" alt="Miyama Seikou Co., Ltd. Logo" class="logo-image">
+            <h1 class="main-text">ミヤマ精工株式会社 / Miyama Seikou Co., Ltd.</h1>
+            <p class="sub-text">IoTシステムへようこそ / Welcome to the IoT System</p>
+        </div>
+    </div>
+    
+    <!-- Dashboard Page Content -->
+    <div id="dashboard-page">
+        <!-- New container for the full-screen background.
+             The background image is now handled by the CSS class `secondary-factory-bg`. -->
+        <div class="full-bg-container secondary-factory-bg"></div>
+
+        <!-- Header with logo and company name -->
+        <header class="header">
+            <div class="header-logo-container">
+            <img src="{{ url_for('static', filename='miyama-logo.png') }}" alt="Miyama Seikou Logo">
+            </div>
+            
+            <h1 class="title-text">第二工場</h1>
+            
+            <div class="nav-icons">
+                <!-- Dropdown list for navigation -->
+                <div class="dropdown">  
+                    <button onclick="myFunction()" class="nav-button">
+                        <img src="{{ url_for('static', filename='dropdown-list.png') }}" alt="dropdown icon">
+                    </button>    
+                    <div id="myDropdown" class="dropdown-content">  
+                        <a href="/?start=dashboard">第一工場</a>
+                        <a href="/dainikoujou">第二工場</a>
+                        <a href="/daisankoujou">第三工場</a>
+                        <a href="/toyotakoujou">豊田工場</a>
+                    </div>
+                </div>  
+            </div>
+        </header>
+
+        <!-- Main content area, intentionally empty as requested. -->
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 min-h-screen p-4 md:p-8 mt-20">
+            <section class="bg-white/70 backdrop-blur-md rounded-lg shadow-xl overflow-hidden p-6 flex flex-col col-span-full text-center">
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-800">この工場には、まだ表示するデータがありません。</h2>
+                <p class="mt-4 text-gray-600">This page is ready to be populated with real-time data from the second factory.</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Link to the now unified external JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
