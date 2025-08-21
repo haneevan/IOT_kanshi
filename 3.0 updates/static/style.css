@@ -160,7 +160,10 @@ Custom styling for iframes
 /*-------------------main page css-------------------------*/
 /* Opening page container styling */
 #opening-page {
-    background: linear-gradient(135deg, #4CAF50, #2196F3);
+    background-image: url('Main Office.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,7 +178,7 @@ Custom styling for iframes
     justify-content: center;
     padding: 2rem;
     text-align: center;
-    color: white;
+    color: #054ab0;
     opacity: 0; /* Initially hidden */
 }
 
@@ -218,6 +221,17 @@ Custom styling for iframes
 /* Specific background for the second factory */
 .secondary-factory-bg {
     background-image: url('Factory-2.png');
+}
+/*-------------------end ot the line-------------------------*/
+
+/*-------------------3rd factory css-------------------------*/
+/* Specific background for the third factory */
+.third-factory-bg {
+    background-image: url('Factory-3.png');
+}
+/*-------------------end ot the line-------------------------*/
+.toyota-factory-bg {
+    background-image: url('Factory-toyota.png');
 }
 /*-------------------end ot the line-------------------------*/
 
